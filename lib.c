@@ -140,8 +140,8 @@ void drawBullet(struct player *p, int i, int show) {
 
 void drawTimer(int start) {
   int time = (vBlankCounter - start) / 60;
-  char str[7];
-  snprintf(str, 7, "%d:%02d", time / 60, time % 60);
+  char str[50];
+  sprintf(str, "%d:%02d", time / 60, time % 60);
   drawRectDMA(HEIGHT - INDICATOR_OFFSET - 4, WIDTH / 2 - 18, 36, 8, BLACK);
   drawCenteredString(HEIGHT - INDICATOR_OFFSET, 0, WIDTH, 0, str, WHITE);
 }

@@ -352,8 +352,8 @@ int main(void) {
           drawCenteredString(15, 0, WIDTH, 0, "Leaderboard", WHITE);
           for (int i = 0; i < 5; ++i) {
             if (leaderboard[i] != -1) {
-              char str[10];
-              snprintf(str, 10, "%d. %d:%02d", i + 1, leaderboard[i] / 60, leaderboard[i] % 60);
+              char str[50];
+              sprintf(str, "%d. %d:%02d", i + 1, leaderboard[i] / 60, leaderboard[i] % 60);
               drawCenteredString(15 * (i + 3), 0, WIDTH, 0, str, WHITE);
             }
           }

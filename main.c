@@ -147,7 +147,7 @@ int main(void) {
         if (red.health == 0) {
           newState = DEAD;
         }
-        if ((vBlankCounter - stateEntered) % BULLET_RELOAD_FRAMES == 0) {
+        if ((vBlankCounter - stateEntered) % (BULLET_RELOAD_FRAMES / 3) == 0) {
           addBullet(&blue, BULLET_SIZE / 2, randint(BULLET_SIZE, WIDTH - BULLET_SIZE), 1);
         }
         break;
@@ -268,7 +268,7 @@ int main(void) {
             blue.bullet_cols[i] = 0;
           } else if (bulletInbounds(blue.bullet_rows[i], 1)) {
             drawBullet(&blue, i, 0);
-            blue.bullet_rows[i] += BULLET_SPEED;
+            blue.bullet_rows[i] += BULLET_SPEED * 3 / 4;
             if (bulletInbounds(blue.bullet_rows[i], 1)) {
               drawBullet(&blue, i, 1);
             }
